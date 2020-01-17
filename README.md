@@ -26,11 +26,14 @@ This is a library to generate real-time plots in Jupyter notebooks with a tqdm-l
 ## How to use
 ### Single plot
 
-To create simple real-time plot in a Jupyter notebook is as easy as easy as the following line:
+Creating a simple real-time plot in a Jupyter notebook is as easy as easy as the following line:
 <div class="codecell" markdown="1">
 <div class="input_area" markdown="1">
 
 ```
+from jupyter_plot import ProgressPlot
+import numpy as np
+
 pp = ProgressPlot()
 for i in range(1000):
     pp.update(np.sin(i/100))
@@ -41,10 +44,9 @@ pp.finalize()
 
 </div>
 
-
 ![single-plot](notebooks/images/plot_single_dynamic.gif)
 
-**Note:** The `pp.finalize()` statement is necessary to make the plots persistent between sessions.
+**Note:** The `pp.finalize()` statement is necessary to make the plots persistent between notebook sessions.
 
 ### Custom range
 By default, the x and y range adapt to new data points. If the scale is known beforehand, it might steadier to set it beforehand:

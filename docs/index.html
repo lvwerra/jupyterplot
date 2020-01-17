@@ -51,7 +51,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To create simple real-time plot in a Jupyter notebook is as easy as easy as the following line:</p>
+<p>Creating a simple real-time plot in a Jupyter notebook is as easy as easy as the following line:</p>
 
 </div>
 </div>
@@ -61,7 +61,10 @@ summary: "Create real-time plots in Jupyter notebooks."
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pp</span> <span class="o">=</span> <span class="n">ProgressPlot</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">jupyter_plot</span> <span class="kn">import</span> <span class="n">ProgressPlot</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">pp</span> <span class="o">=</span> <span class="n">ProgressPlot</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
     <span class="n">pp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">100</span><span class="p">))</span>
 <span class="n">pp</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
@@ -81,7 +84,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Note:</strong> The <code>pp.finalize()</code> statement is necessary to make the plots persistent between sessions.</p>
+<p><strong>Note:</strong> The <code>pp.finalize()</code> statement is necessary to make the plots persistent between notebook sessions.</p>
 
 </div>
 </div>
