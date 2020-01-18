@@ -24,7 +24,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-it?">What is it?<a class="anchor-link" href="#What-is-it?">&#182;</a></h2><p>This is a library to generate real-time plots in Jupyter notebooks with a tqdm-like interface. It is largely based on the <a href="https://github.com/AndreasMadsen/python-lrcurve">python-lrcurve</a> by Andreas Madsen.</p>
+<h2 id="What-is-it?">What is it?<a class="anchor-link" href="#What-is-it?">&#182;</a></h2><p>This is a library to generate real-time plots in Jupyter notebooks with a tqdm-like interface. It is largely based on the <a href="https://github.com/AndreasMadsen/python-lrcurve">python-lrcurve</a> library by Andreas Madsen.</p>
 <p><img src="/jupyter_plot/./images/plot_multiple_static.gif" alt="single-plot"></p>
 
 </div>
@@ -217,9 +217,26 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Input-format">Input format<a class="anchor-link" href="#Input-format">&#182;</a></h3><h4 id="Single-plot,-single-line">Single plot, single line<a class="anchor-link" href="#Single-plot,-single-line">&#182;</a></h4><p>If a the progress plot consists of a single plot with a single line one can pass the y-updates as int/floats.</p>
+<h4 id="Multiple-plots,-multiple-lines">Multiple plots, multiple lines<a class="anchor-link" href="#Multiple-plots,-multiple-lines">&#182;</a></h4><p>If multiple plots or lines are used, the y-updates can either be lists or dicts:</p>
+<div class="highlight"><pre><span></span><span class="n">y_update_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">y_plot_1_line_1</span><span class="p">,</span> <span class="n">y_plot_1_line_2</span><span class="p">],</span>
+                 <span class="p">[</span><span class="n">y_plot_2_line_1</span><span class="p">,</span> <span class="n">y_plot_2_line_2</span><span class="p">]]</span>
+
+<span class="n">y_update_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;plot_name_1&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;line_name_1&#39;</span><span class="p">:</span> <span class="n">y_plot_1_line_1</span><span class="p">,</span>
+                                 <span class="s1">&#39;line_name_2&#39;</span><span class="p">:</span> <span class="n">y_plot_1_line_2</span><span class="p">},</span>
+                 <span class="s1">&#39;plot_name_2&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;line_name_1&#39;</span><span class="p">:</span> <span class="n">y_plot_2_line_1</span><span class="p">,</span>
+                                 <span class="s1">&#39;line_name_2&#39;</span><span class="p">:</span> <span class="n">y_plot_2_line_2</span><span class="p">}}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Limitations">Limitations<a class="anchor-link" href="#Limitations">&#182;</a></h2><ul>
 <li>Only one <code>ProgressPlot()</code> object can be used at a time. </li>
-<li>Each subplot must have the same number of lines and same line colors.</li>
+<li>Each subplot must have the same number of lines.</li>
+<li>The same color cycle for each subplot is used.</li>
 </ul>
 
 </div>

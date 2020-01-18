@@ -15,7 +15,7 @@
 
 ## What is it?
 
-This is a library to generate real-time plots in Jupyter notebooks with a tqdm-like interface. It is largely based on the [python-lrcurve](https://github.com/AndreasMadsen/python-lrcurve) by Andreas Madsen.
+This is a library to generate real-time plots in Jupyter notebooks with a tqdm-like interface. It is largely based on the [python-lrcurve](https://github.com/AndreasMadsen/python-lrcurve) library by Andreas Madsen.
 
 ![single-plot](notebooks/images/plot_multiple_static.gif)
 
@@ -121,7 +121,23 @@ pp.finalize()
 
 ![single-plot](notebooks/images/plot_single_static_custom.gif)
 
+### Input format
+#### Single plot, single line
+If a the progress plot consists of a single plot with a single line one can pass the y-updates as int/floats.
+#### Multiple plots, multiple lines
+If multiple plots or lines are used, the y-updates can either be lists or dicts:
+```python
+y_update_list = [[y_plot_1_line_1, y_plot_1_line_2],
+                 [y_plot_2_line_1, y_plot_2_line_2]]
+
+y_update_dict = {'plot_name_1': {'line_name_1': y_plot_1_line_1,
+                                 'line_name_2': y_plot_1_line_2},
+                 'plot_name_2': {'line_name_1': y_plot_2_line_1,
+                                 'line_name_2': y_plot_2_line_2}}
+``` 
+
 ## Limitations
 
 * Only one `ProgressPlot()` object can be used at a time. 
-* Each subplot must have the same number of lines and same line colors.
+* Each subplot must have the same number of lines.
+* The same color cycle for each subplot is used.
