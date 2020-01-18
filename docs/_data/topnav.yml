@@ -2,7 +2,7 @@ topnav:
 - title: Topnav
   items:
     - title: GitHub
-      external_url: https://github.com/lvwerra/jupyter_plot
+      external_url: https://github.com/lvwerra/jupyterplot
 
 #Topnav dropdowns
 topnav_dropdowns:

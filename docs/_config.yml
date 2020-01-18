@@ -1,7 +1,7 @@
-repository: lvwerra/jupyter_plot
+repository: lvwerra/jupyterplot
 output: web
-topnav_title: jupyter_plot
-site_title: jupyter_plot
+topnav_title: jupyterplot
+site_title: jupyterplot
 company_name: Leandro von Werra
 description: Create real-time plots in Jupyter Notebooks.
 # Set to false to disable KaTeX math

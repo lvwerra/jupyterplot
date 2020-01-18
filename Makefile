@@ -1,10 +1,10 @@
 SRC = $(wildcard ./*.ipynb)
 
-all: jupyter_plot docs
+all: jupyterplot docs
 
-jupyter_plot: $(SRC)
+jupyterplot: $(SRC)
 	nbdev_build_lib
-	touch jupyter_plot
+	touch jupyterplot
 
 docs_serve: docs
 	cd docs && bundle exec jekyll serve
