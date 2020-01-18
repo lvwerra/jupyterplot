@@ -10,9 +10,9 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: jupyter_plot
-      url: /jupyter_plot
+      title: jupyterplot
+      url: /jupyterplot
     output: web
-    title: jupyter_plot
+    title: jupyterplot
   output: web
   title: Sidebar

@@ -8,7 +8,7 @@
 
 -->
 
-# jupyter_plot
+# jupyterplot
 
 > Create real-time plots in Jupyter notebooks.
 
@@ -21,7 +21,7 @@ This is a library to generate real-time plots in Jupyter notebooks with a tqdm-l
 
 ## Install
 
-`pip install jupyter_plot`
+`pip install jupyterplot`
 
 ## How to use
 ### Single plot
@@ -31,7 +31,7 @@ Creating a simple real-time plot in a Jupyter notebook is as easy as easy as the
 <div class="input_area" markdown="1">
 
 ```
-from jupyter_plot import ProgressPlot
+from jupyterplot import ProgressPlot
 import numpy as np
 
 pp = ProgressPlot()
