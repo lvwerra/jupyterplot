@@ -15,7 +15,7 @@
 
 ## What is it?
 
-It generalises Andreas Madsen's excellent [python-lrcurve](https://github.com/AndreasMadsen/python-lrcurve) library for machine learning to produce visualisations for arbitrary functions.
+It generalises Andreas Madsen's excellent [python-lrcurve](https://github.com/AndreasMadsen/python-lrcurve) library for machine learning to produce visualisations for arbitrary functions in real-time.
 
 ![single-plot](notebooks/images/plot_multiple_static.gif)
 
