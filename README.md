@@ -15,7 +15,7 @@
 
 ## What is it?
 
-This is a library to generate real-time plots in Jupyter notebooks with a tqdm-like interface. It is largely based on the [python-lrcurve](https://github.com/AndreasMadsen/python-lrcurve) library by Andreas Madsen.
+It generalises Andreas Madsen's excellent [python-lrcurve](https://github.com/AndreasMadsen/python-lrcurve) library for machine learning to produce visualisations for arbitrary functions.
 
 ![single-plot](notebooks/images/plot_multiple_static.gif)
 
@@ -26,7 +26,7 @@ This is a library to generate real-time plots in Jupyter notebooks with a tqdm-l
 ## How to use
 ### Single plot
 
-Creating a simple real-time plot in a Jupyter notebook is as easy as easy as the following line:
+Creating a simple real-time plot in a Jupyter notebook is as easy as easy as the following snippet:
 <div class="codecell" markdown="1">
 <div class="input_area" markdown="1">
 
@@ -49,7 +49,7 @@ pp.finalize()
 **Note:** The `pp.finalize()` statement is necessary to make the plots persistent between notebook sessions.
 
 ### Custom range
-By default, the x and y range adapt to new data points. If the scale is known beforehand, it might steadier to set it beforehand:
+By default, the x and y ranges adapt to new data points. If the scale is known beforehand, it can be steadier to set it beforehand:
 <div class="codecell" markdown="1">
 <div class="input_area" markdown="1">
 
@@ -87,7 +87,7 @@ pp.finalize()
 
 ![single-plot](notebooks/images/plot_multiple_static.gif)
 
-**Note:** The data is fed with two brackets `[[y1, y2, y3]]`. The first list corresponds the plots, wheras the second list to each line of each plot as we will also see in the next example.
+**Note:** The data is fed to `pp.update()` as a list of lists, where each sublist corresponds to the curves that are generated in each subplot.
 
 ### Multiple plots
 <div class="codecell" markdown="1">
@@ -112,7 +112,7 @@ pp.finalize()
 ![single-plot](notebooks/images/plot_multiple_plots_static.gif)
 
 ### Custom x-values
-Finally, if the x values should not be incremented by 1 at every update one can set the `x_iterator=False`. This requires passing two values to the `update(x, y)`, where `x` is an `int`/`float` and `y` follows the same format as in the previous examples.
+If the x values should not be incremented by 1 at every update one can set the `x_iterator=False`. This requires passing two values to the `update(x, y)`, where `x` is an `int` or `float` and `y` follows the same format as in the previous examples.
 <div class="codecell" markdown="1">
 <div class="input_area" markdown="1">
 
@@ -131,7 +131,7 @@ pp.finalize()
 
 ### Input format
 #### Single plot, single line
-If a the progress plot consists of a single plot with a single line one can pass the y-updates as int/floats.
+If the progress plot consists of a single plot with a single line one can pass the y-updates as `int` or `float`.
 #### Multiple plots, multiple lines
 If multiple plots or lines are used, the y-updates can either be lists or dicts:
 ```python

@@ -24,7 +24,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-it?">What is it?<a class="anchor-link" href="#What-is-it?">&#182;</a></h2><p>This is a library to generate real-time plots in Jupyter notebooks with a tqdm-like interface. It is largely based on the <a href="https://github.com/AndreasMadsen/python-lrcurve">python-lrcurve</a> library by Andreas Madsen.</p>
+<h2 id="What-is-it?">What is it?<a class="anchor-link" href="#What-is-it?">&#182;</a></h2><p>It generalises Andreas Madsen's excellent <a href="https://github.com/AndreasMadsen/python-lrcurve">python-lrcurve</a> library for machine learning to produce visualisations for arbitrary functions.</p>
 <p><img src="/jupyterplot/./images/plot_multiple_static.gif" alt="single-plot"></p>
 
 </div>
@@ -51,7 +51,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Creating a simple real-time plot in a Jupyter notebook is as easy as easy as the following line:</p>
+<p>Creating a simple real-time plot in a Jupyter notebook is as easy as easy as the following snippet:</p>
 
 </div>
 </div>
@@ -91,7 +91,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Custom-range">Custom range<a class="anchor-link" href="#Custom-range">&#182;</a></h3><p>By default, the x and y range adapt to new data points. If the scale is known beforehand, it might steadier to set it beforehand:</p>
+<h3 id="Custom-range">Custom range<a class="anchor-link" href="#Custom-range">&#182;</a></h3><p>By default, the x and y ranges adapt to new data points. If the scale is known beforehand, it can be steadier to set it beforehand:</p>
 
 </div>
 </div>
@@ -154,7 +154,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Note:</strong> The data is fed with two brackets <code>[[y1, y2, y3]]</code>. The first list corresponds the plots, wheras the second list to each line of each plot as we will also see in the next example.</p>
+<p><strong>Note:</strong> The data is fed to <code>pp.update()</code> as a list of lists, where each sublist corresponds to the curves that are generated in each subplot.</p>
 
 </div>
 </div>
@@ -195,7 +195,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Custom-x-values">Custom x-values<a class="anchor-link" href="#Custom-x-values">&#182;</a></h3><p>Finally, if the x values should not be incremented by 1 at every update one can set the <code>x_iterator=False</code>. This requires passing two values to the <code>update(x, y)</code>, where <code>x</code> is an <code>int</code>/<code>float</code> and <code>y</code> follows the same format as in the previous examples.</p>
+<h3 id="Custom-x-values">Custom x-values<a class="anchor-link" href="#Custom-x-values">&#182;</a></h3><p>If the x values should not be incremented by 1 at every update one can set the <code>x_iterator=False</code>. This requires passing two values to the <code>update(x, y)</code>, where <code>x</code> is an <code>int</code> or <code>float</code> and <code>y</code> follows the same format as in the previous examples.</p>
 
 </div>
 </div>
@@ -225,7 +225,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Input-format">Input format<a class="anchor-link" href="#Input-format">&#182;</a></h3><h4 id="Single-plot,-single-line">Single plot, single line<a class="anchor-link" href="#Single-plot,-single-line">&#182;</a></h4><p>If a the progress plot consists of a single plot with a single line one can pass the y-updates as int/floats.</p>
+<h3 id="Input-format">Input format<a class="anchor-link" href="#Input-format">&#182;</a></h3><h4 id="Single-plot,-single-line">Single plot, single line<a class="anchor-link" href="#Single-plot,-single-line">&#182;</a></h4><p>If the progress plot consists of a single plot with a single line one can pass the y-updates as <code>int</code> or <code>float</code>.</p>
 <h4 id="Multiple-plots,-multiple-lines">Multiple plots, multiple lines<a class="anchor-link" href="#Multiple-plots,-multiple-lines">&#182;</a></h4><p>If multiple plots or lines are used, the y-updates can either be lists or dicts:</p>
 <div class="highlight"><pre><span></span><span class="n">y_update_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">y_plot_1_line_1</span><span class="p">,</span> <span class="n">y_plot_1_line_2</span><span class="p">],</span>
                  <span class="p">[</span><span class="n">y_plot_2_line_1</span><span class="p">,</span> <span class="n">y_plot_2_line_2</span><span class="p">]]</span>
