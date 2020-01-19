@@ -69,19 +69,21 @@ class ProgressPlot(PlotLearningCurve):
 
 
     """
-    def __init__(self,
-                 plot_names=['plot'],
-                 line_names=['line-1'],
-                 line_colors=None,
-                 x_lim=[None, None],
-                 y_lim=[None, None],
-                 x_label='iteration',
-                 x_iterator=True,
-                 height = None,
-                 width = 600,
-                 display_fn=IPython.display.display,
-                 debug=False
-                ):
+
+    def __init__(
+        self,
+        plot_names=["plot"],
+        line_names=["line-1"],
+        line_colors=None,
+        x_lim=[None, None],
+        y_lim=[None, None],
+        x_label="iteration",
+        x_iterator=True,
+        height=None,
+        width=600,
+        display_fn=IPython.display.display,
+        debug=False,
+    ):
 
         self.width = width
         self.height = height
@@ -94,13 +96,15 @@ class ProgressPlot(PlotLearningCurve):
         self.x_lim = x_lim
         self.y_lim = y_lim
         self.x_label = x_label
-        self.iterator=0
+        self.iterator = 0
 
         if not line_colors:
-            line_colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
+            line_colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 
         # setup color cycle from list of line colors
-        self.line_colors = [line_colors[i%len(line_colors)] for i in range(len(line_names))]
+        self.line_colors = [
+            line_colors[i % len(line_colors)] for i in range(len(line_names))
+        ]
 
         if x_iterator:
             self.update = self._update_with_iter
@@ -108,7 +112,6 @@ class ProgressPlot(PlotLearningCurve):
             self.update = self._update_with_x
 
         self._setup_plot()
-
 
     def _update_with_iter(self, y):
         """
@@ -124,7 +127,7 @@ class ProgressPlot(PlotLearningCurve):
             be passed.
         """
         self._update_with_x(self.iterator, y)
-        self.iterator+=1
+        self.iterator += 1
 
     def _update_with_x(self, x, y):
         """
@@ -154,38 +157,54 @@ class ProgressPlot(PlotLearningCurve):
         elif isinstance(y, (int, float)):
             return self._y_scalar_to_dict(y)
         else:
-            raise ValueError('Not supported data type for update. Should be one of dict/list/float.')
+            raise ValueError(
+                "Not supported data type for update. Should be one of dict/list/float."
+            )
 
     def _y_list_to_dict(self, y):
         """Parse y-data in list to dict for js."""
-        if not (len(y)==len(self._plots)):
-            raise ValueError('Number of plot updates not equal to number of plots!')
+        if not (len(y) == len(self._plots)):
+            raise ValueError("Number of plot updates not equal to number of plots!")
         if not all(isinstance(yi, list) for yi in y):
-            raise ValueError('Line updates not of type list!')
-        if not all(len(yi)==len(self.line_names) for yi in y):
-            raise ValueError('Number of line update values not equal to number of lines!')
+            raise ValueError("Line updates not of type list!")
+        if not all(len(yi) == len(self.line_names) for yi in y):
+            raise ValueError(
+                "Number of line update values not equal to number of lines!"
+            )
 
-        y_dict = {plot: {line: y_ij for line, y_ij in zip(self.line_names, y_i)} for plot, y_i in zip(self._plots, y)}
+        y_dict = {
+            plot: {line: y_ij for line, y_ij in zip(self.line_names, y_i)}
+            for plot, y_i in zip(self._plots, y)
+        }
         return y_dict
 
     def _y_scalar_to_dict(self, y):
         """Parse y-data int/or float to dict for js."""
-        if not (len(self._plots)==1 and len(self.line_names)==1):
-            raise ValueError('Can only update with int/float with one plot and one line.')
+        if not (len(self._plots) == 1 and len(self.line_names) == 1):
+            raise ValueError(
+                "Can only update with int/float with one plot and one line."
+            )
 
         y_dict = {self._plots[0]: {self.line_names[0]: y}}
         return y_dict
 
     def _setup_plot(self):
         """Setup progress plot by calling initializing PlotLearningCurve class."""
-        line_config = {name: {'name': name, 'color': color} for name, color in zip(self.line_names, self.line_colors)}
-        facet_config = {name: {'name': name, 'limit': self.y_lim} for name in self._plots}
-        xaxis_config = {'name': self.x_label, 'limit': self.x_lim}
+        line_config = {
+            name: {"name": name, "color": color}
+            for name, color in zip(self.line_names, self.line_colors)
+        }
+        facet_config = {
+            name: {"name": name, "limit": self.y_lim} for name in self._plots
+        }
+        xaxis_config = {"name": self.x_label, "limit": self.x_lim}
 
-        super().__init__(height=self.height, width=self.width,
-                         line_config=line_config,
-                         facet_config=facet_config,
-                         xaxis_config=xaxis_config,
-                         display_fn=self.display_fn,
-                         debug=self.debug)
-
+        super().__init__(
+            height=self.height,
+            width=self.width,
+            line_config=line_config,
+            facet_config=facet_config,
+            xaxis_config=xaxis_config,
+            display_fn=self.display_fn,
+            debug=self.debug,
+        )

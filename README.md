@@ -36,7 +36,7 @@ import numpy as np
 
 pp = ProgressPlot()
 for i in range(1000):
-    pp.update(np.sin(i/100))
+    pp.update(np.sin(i / 100))
 pp.finalize()
 ```
 
@@ -54,9 +54,9 @@ By default, the x and y range adapt to new data points. If the scale is known be
 <div class="input_area" markdown="1">
 
 ```
-pp = ProgressPlot(x_lim=[0,1000],y_lim=[-1.5,1.5])
+pp = ProgressPlot(x_lim=[0, 1000], y_lim=[-1.5, 1.5])
 for i in range(1000):
-    pp.update(np.sin(i/100))
+    pp.update(np.sin(i / 100))
 pp.finalize()
 ```
 
@@ -72,9 +72,12 @@ One can also plot several lines in parallel by specifying the line names in the 
 <div class="input_area" markdown="1">
 
 ```
-pp = ProgressPlot(line_names=['lin', 'log', 'cos', 'sin'], x_lim=[0, 1000], y_lim=[-1,4])
+pp = ProgressPlot(line_names=["lin", "log", "cos", "sin"],
+                  x_lim=[0, 1000],
+                  y_lim=[-1, 4])
+
 for i in range(1000):
-    pp.update([[i/250, np.log10(i+1), np.cos(i/100), np.sin(i/100)]])
+    pp.update([[i / 250, np.log10(i + 1), np.cos(i / 100), np.sin(i / 100)]])
 pp.finalize()
 ```
 
@@ -91,9 +94,14 @@ pp.finalize()
 <div class="input_area" markdown="1">
 
 ```
-pp = ProgressPlot(plot_names=['cos', 'sin'], line_names=['data', 'delayed-data'], x_lim=[0, 1000], y_lim=[-1,1])
+pp = ProgressPlot(plot_names=["cos", "sin"],
+                  line_names=["data", "delayed-data"],
+                  x_lim=[0, 1000],
+                  y_lim=[-1, 1])
+
 for i in range(1000):
-    pp.update([[np.cos(i/100), np.cos((i+20)/100)], [np.sin(i/100), np.sin((i+20)/100)]])
+    pp.update([[np.cos(i / 100), np.cos((i + 20) / 100)],
+               [np.sin(i / 100), np.sin((i + 20) / 100)]])
 pp.finalize()
 ```
 
@@ -109,9 +117,9 @@ Finally, if the x values should not be incremented by 1 at every update one can 
 <div class="input_area" markdown="1">
 
 ```
-pp = ProgressPlot(x_iterator=False, x_label='custom-x', x_lim=[0,10000], y_lim=[0, 10])
+pp = ProgressPlot(x_iterator=False, x_label="custom-x", x_lim=[0, 10000], y_lim=[0, 10])
 for i in range(1000):
-    pp.update(10*i, i/100)
+    pp.update(10 * i, i / 100)
 pp.finalize()
 ```
 
