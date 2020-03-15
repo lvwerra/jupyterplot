@@ -98,6 +98,14 @@ class ProgressPlot(PlotLearningCurve):
         self.x_label = x_label
         self.iterator = 0
 
+        if isinstance(y_lim[0], list):
+            if len(y_lim)==len(plot_names):
+                self.y_lim = y_lim
+            else:
+                raise ValueError(f"Unequal number of y limits and plots ({len(y_lim)} and {len(plot_names)}).")
+        else:
+            self.y_lim = [y_lim] * len(plot_names)
+
         if not line_colors:
             line_colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 
@@ -190,12 +198,13 @@ class ProgressPlot(PlotLearningCurve):
 
     def _setup_plot(self):
         """Setup progress plot by calling initializing PlotLearningCurve class."""
+
         line_config = {
             name: {"name": name, "color": color}
             for name, color in zip(self.line_names, self.line_colors)
         }
         facet_config = {
-            name: {"name": name, "limit": self.y_lim} for name in self._plots
+            name: {"name": name, "limit": y_lim} for name, y_lim in zip(self._plots, self.y_lim)
         }
         xaxis_config = {"name": self.x_label, "limit": self.x_lim}
 
