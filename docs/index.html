@@ -225,6 +225,35 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Decoupled-y-limits">Decoupled y-limits<a class="anchor-link" href="#Decoupled-y-limits">&#182;</a></h3><p>If each subplot should have different y-limits then the y-limits can be passed as a list containing the the limits for each subplot.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pp</span> <span class="o">=</span> <span class="n">ProgressPlot</span><span class="p">(</span><span class="n">plot_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;plot 1&#39;</span><span class="p">,</span> <span class="s1">&#39;plot 2&#39;</span><span class="p">],</span> <span class="n">x_lim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span> <span class="n">y_lim</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">]])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">pp</span><span class="o">.</span><span class="n">update</span><span class="p">([[(</span><span class="n">i</span><span class="o">/</span><span class="mi">100</span><span class="p">)],</span> <span class="p">[(</span><span class="n">i</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">]])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/jupyterplot/./images/plot_separate_ylim.gif" alt="single-plot"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Input-format">Input format<a class="anchor-link" href="#Input-format">&#182;</a></h3><h4 id="Single-plot,-single-line">Single plot, single line<a class="anchor-link" href="#Single-plot,-single-line">&#182;</a></h4><p>If the progress plot consists of a single plot with a single line one can pass the y-updates as <code>int</code> or <code>float</code>.</p>
 <h4 id="Multiple-plots,-multiple-lines">Multiple plots, multiple lines<a class="anchor-link" href="#Multiple-plots,-multiple-lines">&#182;</a></h4><p>If multiple plots or lines are used, the y-updates can either be lists or dicts:</p>
 <div class="highlight"><pre><span></span><span class="n">y_update_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">y_plot_1_line_1</span><span class="p">,</span> <span class="n">y_plot_1_line_2</span><span class="p">],</span>
