@@ -129,6 +129,23 @@ pp.finalize()
 
 ![single-plot](notebooks/images/plot_single_static_custom.gif)
 
+### Decoupled y-limits
+If each subplot should have different y-limits then the y-limits can be passed as a list containing the the limits for each subplot.
+<div class="codecell" markdown="1">
+<div class="input_area" markdown="1">
+
+```
+pp = ProgressPlot(plot_names=['plot 1', 'plot 2'], x_lim=[0, 1000], y_lim=[[0, 10],[0, 100]])
+for i in range(1000):
+    pp.update([[(i/100)], [(i/100)**2]])
+```
+
+</div>
+
+</div>
+
+![single-plot](notebooks/images/plot_separate_ylim.gif)
+
 ### Input format
 #### Single plot, single line
 If the progress plot consists of a single plot with a single line one can pass the y-updates as `int` or `float`.
