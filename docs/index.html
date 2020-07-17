@@ -6,6 +6,7 @@ keywords: fastai
 sidebar: home_sidebar
 
 summary: "Create real-time plots in Jupyter notebooks."
+description: "Create real-time plots in Jupyter notebooks."
 ---
 <!--
 
@@ -18,13 +19,17 @@ summary: "Create real-time plots in Jupyter notebooks."
 -->
 
 <div class="container" id="notebook-container">
+        
+    {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-it?">What is it?<a class="anchor-link" href="#What-is-it?">&#182;</a></h2><p>It generalises Andreas Madsen's excellent <a href="https://github.com/AndreasMadsen/python-lrcurve">python-lrcurve</a> library for machine learning to produce visualisations for arbitrary functions in real-time.</p>
+<h2 id="What-is-it?">What is it?<a class="anchor-link" href="#What-is-it?"> </a></h2><p>It generalises Andreas Madsen's excellent <a href="https://github.com/AndreasMadsen/python-lrcurve">python-lrcurve</a> library for machine learning to produce visualisations for arbitrary functions in real-time.</p>
 <p><img src="/jupyterplot/./images/plot_multiple_static.gif" alt="single-plot"></p>
 
 </div>
@@ -32,7 +37,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Install">Install<a class="anchor-link" href="#Install">&#182;</a></h2>
+<h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2>
 </div>
 </div>
 </div>
@@ -45,7 +50,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use">&#182;</a></h2><h3 id="Single-plot">Single plot<a class="anchor-link" href="#Single-plot">&#182;</a></h3>
+<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use"> </a></h2><h3 id="Single-plot">Single plot<a class="anchor-link" href="#Single-plot"> </a></h3>
 </div>
 </div>
 </div>
@@ -56,6 +61,8 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -75,6 +82,8 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/jupyterplot/./images/plot_single_dynamic.gif" alt="single-plot"></p>
@@ -91,11 +100,13 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Custom-range">Custom range<a class="anchor-link" href="#Custom-range">&#182;</a></h3><p>By default, the x and y ranges adapt to new data points. If the scale is known beforehand, it can be steadier to set it beforehand:</p>
+<h3 id="Custom-range">Custom range<a class="anchor-link" href="#Custom-range"> </a></h3><p>By default, the x and y ranges adapt to new data points. If the scale is known beforehand, it can be steadier to set it beforehand:</p>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -112,6 +123,8 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/jupyterplot/./images/plot_single_static.gif" alt="single-plot"></p>
@@ -121,11 +134,13 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Multiple-lines">Multiple lines<a class="anchor-link" href="#Multiple-lines">&#182;</a></h3><p>One can also plot several lines in parallel by specifying the line names in the constructor and passing all values in a list.</p>
+<h3 id="Multiple-lines">Multiple lines<a class="anchor-link" href="#Multiple-lines"> </a></h3><p>One can also plot several lines in parallel by specifying the line names in the constructor and passing all values in a list.</p>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -145,6 +160,8 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/jupyterplot/./images/plot_multiple_static.gif" alt="single-plot"></p>
@@ -161,10 +178,12 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Multiple-plots">Multiple plots<a class="anchor-link" href="#Multiple-plots">&#182;</a></h3>
+<h3 id="Multiple-plots">Multiple plots<a class="anchor-link" href="#Multiple-plots"> </a></h3>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -186,6 +205,8 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/jupyterplot/./images/plot_multiple_plots_static.gif" alt="single-plot"></p>
@@ -195,11 +216,13 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Custom-x-values">Custom x-values<a class="anchor-link" href="#Custom-x-values">&#182;</a></h3><p>If the x values should not be incremented by 1 at every update one can set the <code>x_iterator=False</code>. This requires passing two values to the <code>update(x, y)</code>, where <code>x</code> is an <code>int</code> or <code>float</code> and <code>y</code> follows the same format as in the previous examples.</p>
+<h3 id="Custom-x-values">Custom x-values<a class="anchor-link" href="#Custom-x-values"> </a></h3><p>If the x values should not be incremented by 1 at every update one can set the <code>x_iterator=False</code>. This requires passing two values to the <code>update(x, y)</code>, where <code>x</code> is an <code>int</code> or <code>float</code> and <code>y</code> follows the same format as in the previous examples.</p>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -216,6 +239,8 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/jupyterplot/./images/plot_single_static_custom.gif" alt="single-plot"></p>
@@ -225,11 +250,13 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Decoupled-y-limits">Decoupled y-limits<a class="anchor-link" href="#Decoupled-y-limits">&#182;</a></h3><p>If each subplot should have different y-limits then the y-limits can be passed as a list containing the the limits for each subplot.</p>
+<h3 id="Decoupled-y-limits">Decoupled y-limits<a class="anchor-link" href="#Decoupled-y-limits"> </a></h3><p>If each subplot should have different y-limits then the y-limits can be passed as a list containing the the limits for each subplot.</p>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -245,6 +272,8 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/jupyterplot/./images/plot_separate_ylim.gif" alt="single-plot"></p>
@@ -254,8 +283,8 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Input-format">Input format<a class="anchor-link" href="#Input-format">&#182;</a></h3><h4 id="Single-plot,-single-line">Single plot, single line<a class="anchor-link" href="#Single-plot,-single-line">&#182;</a></h4><p>If the progress plot consists of a single plot with a single line one can pass the y-updates as <code>int</code> or <code>float</code>.</p>
-<h4 id="Multiple-plots,-multiple-lines">Multiple plots, multiple lines<a class="anchor-link" href="#Multiple-plots,-multiple-lines">&#182;</a></h4><p>If multiple plots or lines are used, the y-updates can either be lists or dicts:</p>
+<h3 id="Input-format">Input format<a class="anchor-link" href="#Input-format"> </a></h3><h4 id="Single-plot,-single-line">Single plot, single line<a class="anchor-link" href="#Single-plot,-single-line"> </a></h4><p>If the progress plot consists of a single plot with a single line one can pass the y-updates as <code>int</code> or <code>float</code>.</p>
+<h4 id="Multiple-plots,-multiple-lines">Multiple plots, multiple lines<a class="anchor-link" href="#Multiple-plots,-multiple-lines"> </a></h4><p>If multiple plots or lines are used, the y-updates can either be lists or dicts:</p>
 <div class="highlight"><pre><span></span><span class="n">y_update_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">y_plot_1_line_1</span><span class="p">,</span> <span class="n">y_plot_1_line_2</span><span class="p">],</span>
                  <span class="p">[</span><span class="n">y_plot_2_line_1</span><span class="p">,</span> <span class="n">y_plot_2_line_2</span><span class="p">]]</span>
 
@@ -270,7 +299,7 @@ summary: "Create real-time plots in Jupyter notebooks."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Limitations">Limitations<a class="anchor-link" href="#Limitations">&#182;</a></h2><ul>
+<h2 id="Limitations">Limitations<a class="anchor-link" href="#Limitations"> </a></h2><ul>
 <li>Only one <code>ProgressPlot()</code> object can be used at a time. </li>
 <li>Each subplot must have the same number of lines.</li>
 <li>The same color cycle for each subplot is used.</li>
